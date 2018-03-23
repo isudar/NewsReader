@@ -2,7 +2,6 @@ package com.example.sudo.zadatakpt.fragments;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,9 +12,6 @@ import com.example.sudo.zadatakpt.R;
 import com.example.sudo.zadatakpt.models.News;
 import com.squareup.picasso.Picasso;
 
-/**
- * Created by Ivan on 22.03.2018..
- */
 
 public class ScreenSliderFragment extends Fragment {
 

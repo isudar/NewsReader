@@ -3,16 +3,13 @@ package com.example.sudo.zadatakpt.adapter;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
-import android.util.Log;
+
 
 import com.example.sudo.zadatakpt.fragments.ScreenSliderFragment;
 import com.example.sudo.zadatakpt.models.News;
 
 import java.util.List;
 
-/**
- * Created by Ivan on 22.03.2018..
- */
 
 public class ScreenSlidePagerAdapter extends FragmentPagerAdapter {
 

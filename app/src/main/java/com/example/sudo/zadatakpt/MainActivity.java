@@ -54,7 +54,7 @@ public class MainActivity extends Activity implements Callback<NewsResponse> {
                                 @Override
                                 public void run() {
                                     //Log.e("Are u working", "Ja");
-                                    if (System.currentTimeMillis() - responseTime > 300000) {
+                                    if (System.currentTimeMillis() - responseTime > 300000) { //5 min * 60 s * 1000 ms
                                         findNews();
                                     }
                                     handler.postDelayed(this, 1000);
@@ -63,17 +63,17 @@ public class MainActivity extends Activity implements Callback<NewsResponse> {
                 , 1000);
 
         if (newsList == null && newsList.size() == 0) {
-            //  Log.e("sasa", "jaja");
+            Log.e("sasa", "jaja");
             findNews();
         } else {
-//            Log.e("sasa", "xaxaxa");
+            Log.e("sasa", "xaxaxa");
             showList();
         }
 
     }
 
     private void showList() {
-        pbLoad.setVisibility(View.INVISIBLE);
+
         newsList = dbHelper.getAllNews();
         NewsAdapter adapter = new NewsAdapter(newsList);
         this.lvList.setAdapter(adapter);
@@ -89,7 +89,8 @@ public class MainActivity extends Activity implements Callback<NewsResponse> {
     }
 
     private void findNews() {
-       //   Log.e("sasa", "findNews");
+        pbLoad.setVisibility(View.VISIBLE);
+        Log.e("sasa", "findNews");
         ApiInterface apiService =
                 ApiClient.getClient().create(ApiInterface.class);
 
@@ -107,22 +108,24 @@ public class MainActivity extends Activity implements Callback<NewsResponse> {
 
     @Override
     public void onResponse(Call<NewsResponse> call, Response<NewsResponse> response) {
-//        Log.e("Response", String.valueOf(response.body()));
+        Log.e("Response", String.valueOf(response.errorBody()));
         if (response.body() != null) {
             List<News> responseList = response.body().getNews();
-            Log.e("Response", String.valueOf(response.body()));
+            Log.e("Response if", "ušo u if ");
             dbHelper.deleteNews();
             SharedPreferences.Editor editor = sharedPreferences.edit();
             Long currentResponseTime = System.currentTimeMillis();
             editor.putLong(AppConstants.KEY_RESPONSE_TIME, currentResponseTime);
             responseTime = currentResponseTime;
             for (int i = 0; i < responseList.size() - 1; i++) {
+
                 News item = responseList.get(i);
                 dbHelper.addNews(item);
             }
-
-        }
-        else{
+            pbLoad.setVisibility(View.GONE);
+            showList();
+        } else {
+            Log.e("else", "response");
             Popup popup = new Popup();
             popup.show(getFragmentManager(), "tag");
             responseTime = System.currentTimeMillis();
@@ -135,6 +138,7 @@ public class MainActivity extends Activity implements Callback<NewsResponse> {
         Popup popup = new Popup();
         popup.show(getFragmentManager(), "tag");
         responseTime = System.currentTimeMillis();
+        pbLoad.setVisibility(View.GONE);
     }
 
 }

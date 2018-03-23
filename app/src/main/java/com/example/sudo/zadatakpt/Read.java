@@ -4,11 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
 import android.view.MenuItem;
-import android.widget.Button;
-import android.widget.ImageView;
-import android.widget.TextView;
 
 import com.example.sudo.zadatakpt.adapter.ScreenSlidePagerAdapter;
 import com.example.sudo.zadatakpt.helpers.AppConstants;
@@ -44,12 +40,12 @@ public class Read extends AppCompatActivity {
         News firstNews = null;
         final List<News> newsList = dbHelper.getAllNews();
         for (int i = 0; i < newsList.size(); ++i) {
-            if(newsList.get(i).getId().equals(firstNewsId)) {
-             itemPosition = i;
-             firstNews = newsList.get(i);
+            if (newsList.get(i).getId().equals(firstNewsId)) {
+                itemPosition = i;
+                firstNews = newsList.get(i);
             }
         }
-        if(firstNews != null) {
+        if (firstNews != null) {
             getSupportActionBar().setHomeButtonEnabled(true);
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);
             getSupportActionBar().setTitle(firstNews.getTitle());
