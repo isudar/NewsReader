@@ -1,0 +1,25 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="android:Theme.Holo.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+    </style>
+
+    <style name="MatchParent">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+    </style>
+
+    <style name="MatchParentVertical" parent="MatchParent">
+        <item name="android:orientation">vertical</item>
+    </style>
+
+    <style name="MatchParentHorizontal" parent="MatchParent">
+        <item name="android:orientation">horizontal</item>
+    </style>
+
+    <style name="MatchParentVertical.Padding">
+        <item name="android:padding">@dimen/small_padding</item>
+    </style>
+
+</resources>

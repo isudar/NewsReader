@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://C:\Users\Sudo\Documents\Praksa\ZadatakPT\NewReader.iml" filepath="C:\Users\Sudo\Documents\Praksa\ZadatakPT\NewReader.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ZadatakPT.iml" filepath="$PROJECT_DIR$/ZadatakPT.iml" />
+      <module fileurl="file://E:\Projects\Android\NewReader\ZadatakPT.iml" filepath="E:\Projects\Android\NewReader\ZadatakPT.iml" />
+      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://E:\Projects\Android\NewReader\app\app.iml" filepath="E:\Projects\Android\NewReader\app\app.iml" />
+    </modules>
+  </component>
+</project>
